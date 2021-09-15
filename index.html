@@ -1,0 +1,39 @@
+<html>
+<head>
+    <script>
+        function validateform(){
+            const password=document.myform.contact.value;
+            const name = document.myform.name.value;
+            const mail = document.myform.value;
+            if(name.length<1){
+                window.alert("Enter a name");
+            }
+
+            if (password.length=== 0){
+                window.alert("Enter a  proper contact number");
+                return false;
+            }
+
+             if(password.length<10 || password.length>11 ){
+                window.alert("contact Number must be 11 characters long.");
+                return false;
+            }
+             else{
+                 window.alert("successfully submitted!");
+                 return true;
+             }
+        }
+    </script>
+
+</head>
+<body>
+<form name="myform"  onsubmit="return validateform()" >
+
+    Name : <input type="text" placeholder="Enter your name" name="name"> <br> <br>
+    Email : <input type="email" pattern="[^ @]*@[^ @]*" placeholder="Enter your email" name="mail">
+    <br> <br>
+    Contact: <input type="number" placeholder="Enter your contact number" name="contact"><br/><br>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>
